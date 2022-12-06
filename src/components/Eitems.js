@@ -1,16 +1,12 @@
 import "./Eitems.css";
 
-function EItems() {
-    const eTime = "2022/12/06";
-    const eItem = "Car Price";
-    const eItemPrice = 300;
-
+function EItems(props) {
     return (
         <div className="expense-item">
-            <div>{eTime}</div>
+            <div>{props.dateItem}</div>
             <div className="expense-item__description">
-                <h2>{eItem}</h2>
-                <div className="expense-item__price">${eItemPrice}</div>
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">${props.price}</div>
             </div>
         </div>
     );
