@@ -4,10 +4,30 @@ import "./App.css";
 
 function App() {
     let expenseItems = [
-        { id: "e1", title: "New york", price: "200", dateItem: "2022/11/06" },
-        { id: "e2", title: "Paris", price: "400", dateItem: "2022/10/06" },
-        { id: "e3", title: "Rom", price: "100", dateItem: "2022/09/06" },
-        { id: "e4", title: "Tehran", price: "50", dateItem: "2022/08/06" },
+        {
+            id: "e1",
+            title: "New york",
+            price: "200",
+            dateItem: new Date(2022, 11, 6),
+        },
+        {
+            id: "e2",
+            title: "Paris",
+            price: "400",
+            dateItem: new Date(2022, 10, 12),
+        },
+        {
+            id: "e3",
+            title: "Rom",
+            price: "100",
+            dateItem: new Date(2022, 9, 26),
+        },
+        {
+            id: "e4",
+            title: "Tehran",
+            price: "50",
+            dateItem: new Date(2022, 8, 16),
+        },
     ];
 
     return (
