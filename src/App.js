@@ -1,8 +1,9 @@
-import EItems from "./components/Eitems";
+import EItems from "./components/Eitems/Eitems";
+import Card from "./components/UI/Card";
 
 import "./App.css";
 
-function App() {
+const App = () => {
     let expenseItems = [
         {
             id: "e1",
@@ -32,7 +33,7 @@ function App() {
 
     return (
         <div className="App-header">
-            <div className="App-wrapper">
+            <Card className="App-wrapper">
                 <EItems
                     title={expenseItems[0].title}
                     price={expenseItems[0].price}
@@ -53,9 +54,9 @@ function App() {
                     price={expenseItems[3].price}
                     dateItem={expenseItems[3].dateItem}
                 />
-            </div>
+            </Card>
         </div>
     );
-}
+};
 
 export default App;
