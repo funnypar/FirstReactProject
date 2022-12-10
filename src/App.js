@@ -1,5 +1,6 @@
 import EItems from "./components/Eitems/Eitems";
 import Card from "./components/UI/Card";
+import NewEitem from "./components/newEitem/newEitem";
 
 import "./App.css";
 
@@ -33,6 +34,7 @@ const App = () => {
 
     return (
         <div className="App-header">
+            <NewEitem />
             <Card className="App-wrapper">
                 <EItems
                     title={expenseItems[0].title}
