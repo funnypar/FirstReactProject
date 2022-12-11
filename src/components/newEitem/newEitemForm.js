@@ -24,13 +24,21 @@ const NewEitemForm = () => {
             date: new Date(enteredDate),
         };
         console.log(userInputs);
+
+        setenteredCity("");
+        setenteredPrice("");
+        setenteredDate("");
     };
 
     return (
         <form className="new-expense__controls" onSubmit={formSubmitHandler}>
             <div className="new-expense__controls">
                 <label htmlFor="city">City : </label>
-                <input type="text" onChange={cityChangeHandler} />
+                <input
+                    type="text"
+                    value={enteredCity}
+                    onChange={cityChangeHandler}
+                />
             </div>
             <div className="new-expense__controls">
                 <label htmlFor="price">Price : </label>
@@ -38,6 +46,7 @@ const NewEitemForm = () => {
                     type="number"
                     min="0.01"
                     step="0.01"
+                    value={enteredPrice}
                     onChange={priceChangeHandler}
                 />
             </div>
@@ -47,6 +56,7 @@ const NewEitemForm = () => {
                     type="date"
                     min="2018-01-01"
                     max="2025-12-31"
+                    value={enteredDate}
                     onChange={dateChangeHandler}
                 />
             </div>
