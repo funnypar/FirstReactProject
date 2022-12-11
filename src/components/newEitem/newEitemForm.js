@@ -2,21 +2,33 @@ import React, { useState } from "react";
 import "./newEitemForm.css";
 
 const NewEitemForm = () => {
-    const [enteredCity, setenteredCity] = useState("");
-    const [enteredPrice, setenteredPrice] = useState("");
-    const [enteredDate, setenteredDate] = useState("");
+    // const [enteredCity, setenteredCity] = useState("");
+    // const [enteredPrice, setenteredPrice] = useState("");
+    // const [enteredDate, setenteredDate] = useState("");
+
+    const [inputUser, setInputUser] = useState({
+        enteredCity: "",
+        enteredPrice: "",
+        enteredDate: "",
+    });
 
     const cityChangeHandler = (e) => {
-        setenteredCity(e.target.value);
-        console.log(enteredCity);
+        setInputUser({
+            ...inputUser,
+            enteredCity: e.target.value,
+        });
     };
     const priceChangeHandler = (e) => {
-        setenteredPrice(e.target.value);
-        console.log(enteredPrice);
+        setInputUser({
+            ...inputUser,
+            enteredPrice: e.target.value,
+        });
     };
     const dateChangeHandler = (e) => {
-        setenteredDate(e.target.vlaue);
-        console.log(enteredDate);
+        setInputUser({
+            ...inputUser,
+            enteredDate: e.target.vlaue,
+        });
     };
 
     return (
