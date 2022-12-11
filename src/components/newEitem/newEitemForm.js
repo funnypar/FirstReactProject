@@ -2,34 +2,32 @@ import React, { useState } from "react";
 import "./newEitemForm.css";
 
 const NewEitemForm = () => {
-    // const [enteredCity, setenteredCity] = useState("");
-    // const [enteredPrice, setenteredPrice] = useState("");
-    // const [enteredDate, setenteredDate] = useState("");
-
-    const [inputUser, setInputUser] = useState({
-        enteredCity: "",
-        enteredPrice: "",
-        enteredDate: "",
-    });
+    const [enteredCity, setenteredCity] = useState("");
+    const [enteredPrice, setenteredPrice] = useState("");
+    const [enteredDate, setenteredDate] = useState("");
 
     const cityChangeHandler = (e) => {
-        setInputUser((prevState) => {
-            return { ...prevState, enteredCity: e.target.value };
-        });
+        setenteredCity(e.target.value);
     };
     const priceChangeHandler = (e) => {
-        setInputUser((prevState) => {
-            return { ...prevState, enteredPrice: e.target.value };
-        });
+        setenteredPrice(e.target.value);
     };
     const dateChangeHandler = (e) => {
-        setInputUser((prevState) => {
-            return { ...prevState, enteredDate: e.target.vlaue };
-        });
+        setenteredDate(e.target.value);
+    };
+
+    const formSubmitHandler = (e) => {
+        e.preventDefault();
+        const userInputs = {
+            city: enteredCity,
+            price: enteredPrice,
+            date: new Date(enteredDate),
+        };
+        console.log(userInputs);
     };
 
     return (
-        <form className="new-expense__controls">
+        <form className="new-expense__controls" onSubmit={formSubmitHandler}>
             <div className="new-expense__controls">
                 <label htmlFor="city">City : </label>
                 <input type="text" onChange={cityChangeHandler} />
