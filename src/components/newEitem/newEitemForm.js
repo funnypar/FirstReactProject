@@ -13,21 +13,18 @@ const NewEitemForm = () => {
     });
 
     const cityChangeHandler = (e) => {
-        setInputUser({
-            ...inputUser,
-            enteredCity: e.target.value,
+        setInputUser((prevState) => {
+            return { ...prevState, enteredCity: e.target.value };
         });
     };
     const priceChangeHandler = (e) => {
-        setInputUser({
-            ...inputUser,
-            enteredPrice: e.target.value,
+        setInputUser((prevState) => {
+            return { ...prevState, enteredPrice: e.target.value };
         });
     };
     const dateChangeHandler = (e) => {
-        setInputUser({
-            ...inputUser,
-            enteredDate: e.target.vlaue,
+        setInputUser((prevState) => {
+            return { ...prevState, enteredDate: e.target.vlaue };
         });
     };
 
