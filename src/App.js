@@ -32,9 +32,16 @@ const App = () => {
         },
     ];
 
+    const saveNewExpenseData = (expenseDatas) => {
+        const newExpenseDatas = {
+            ...expenseDatas,
+        };
+        console.log(newExpenseDatas);
+    };
+
     return (
         <div className="App-header">
-            <NewEitem />
+            <NewEitem onSaveNewExpenseData={saveNewExpenseData} />
             <Card className="App-wrapper">
                 <EItems
                     title={expenseItems[0].title}

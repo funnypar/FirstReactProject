@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./newEitemForm.css";
 
-const NewEitemForm = () => {
+const NewEitemForm = (props) => {
     const [enteredCity, setenteredCity] = useState("");
     const [enteredPrice, setenteredPrice] = useState("");
     const [enteredDate, setenteredDate] = useState("");
@@ -23,7 +23,8 @@ const NewEitemForm = () => {
             price: enteredPrice,
             date: new Date(enteredDate),
         };
-        console.log(userInputs);
+
+        props.onSaveExpenseData(userInputs);
 
         setenteredCity("");
         setenteredPrice("");
