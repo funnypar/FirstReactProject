@@ -5,6 +5,7 @@ import EitemsDate from "./EitemsDate";
 import "./Eitem.css";
 
 const Eitem = (props) => {
+    // console.log(props);
     return (
         <Card className="expense-item">
             <EitemsDate date={props.date} />
