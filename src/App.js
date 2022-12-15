@@ -1,8 +1,10 @@
+import React from "react";
+
 import EItems from "./components/Eitems/Eitems";
-import Card from "./components/UI/Card";
 import NewEitem from "./components/newEitem/newEitem";
 
 import "./App.css";
+import Card from "./components/UI/Card";
 
 const App = () => {
     let expenseItems = [
@@ -32,37 +34,11 @@ const App = () => {
         },
     ];
 
-    const saveNewExpenseData = (expenseDatas) => {
-        const newExpenseDatas = {
-            ...expenseDatas,
-        };
-        console.log(newExpenseDatas);
-    };
-
     return (
         <div className="App-header">
-            <NewEitem onSaveNewExpenseData={saveNewExpenseData} />
             <Card className="App-wrapper">
-                <EItems
-                    title={expenseItems[0].title}
-                    price={expenseItems[0].price}
-                    dateItem={expenseItems[0].dateItem}
-                />
-                <EItems
-                    title={expenseItems[1].title}
-                    price={expenseItems[1].price}
-                    dateItem={expenseItems[1].dateItem}
-                />
-                <EItems
-                    title={expenseItems[2].title}
-                    price={expenseItems[2].price}
-                    dateItem={expenseItems[2].dateItem}
-                />
-                <EItems
-                    title={expenseItems[3].title}
-                    price={expenseItems[3].price}
-                    dateItem={expenseItems[3].dateItem}
-                />
+                <NewEitem />
+                <EItems items={expenseItems} />
             </Card>
         </div>
     );

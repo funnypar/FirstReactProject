@@ -1,23 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../UI/Card";
-import EitemsDate from "./EitemsDate";
+import Eitem from "./Eitem";
+
 import "./Eitems.css";
 
 const EItems = (props) => {
-    const [price, setPrice] = useState(props.price);
-
-    const hiHandler = () => {
-        setPrice("updated !!!");
-    };
-
     return (
-        <Card className="expense-item">
-            <EitemsDate dateItem={props.dateItem} />
-            <div className="expense-item__description">
-                <h2>{props.title}</h2>
-                <div className="expense-item__price">${price}</div>
-                <button onClick={hiHandler}>click here!</button>
-            </div>
+        <Card className="expenses">
+            <Eitem
+                title={props.items[0].title}
+                price={props.items[0].price}
+                date={props.items[0].dateItem}
+            />
+            <Eitem
+                title={props.items[1].title}
+                price={props.items[1].price}
+                date={props.items[1].dateItem}
+            />
+            <Eitem
+                title={props.items[2].title}
+                price={props.items[2].price}
+                date={props.items[2].dateItem}
+            />
+            <Eitem
+                title={props.items[3].title}
+                price={props.items[3].price}
+                date={props.items[3].dateItem}
+            />
         </Card>
     );
 };
