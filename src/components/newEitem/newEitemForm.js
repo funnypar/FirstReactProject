@@ -19,9 +19,9 @@ const NewEitemForm = (props) => {
     const formSubmitHandler = (e) => {
         e.preventDefault();
         const userInputs = {
-            city: enteredCity,
+            title: enteredCity,
             price: enteredPrice,
-            date: new Date(enteredDate),
+            dateItem: new Date(enteredDate),
         };
 
         props.onSaveExpenseData(userInputs);

@@ -5,7 +5,6 @@ import Eitem from "./Eitem";
 import "./Eitems.css";
 
 const EItems = (props) => {
-    console.log(props);
     return (
         <Card className="expenses">
             {props.items.map((item) => {
