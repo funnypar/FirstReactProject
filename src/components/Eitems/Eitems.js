@@ -10,6 +10,7 @@ const EItems = (props) => {
             {props.items.map((item) => {
                 return (
                     <Eitem
+                        key={item.id}
                         title={item.title}
                         price={item.price}
                         date={item.dateItem}
